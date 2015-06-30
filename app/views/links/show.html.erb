@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @link.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <!-- THIS IS GOOD :::  <a href="<%= @link.url %>"><%= @link.url %></a> -->
+  <%= @link.url %>
+</p>
+
+<%= link_to 'edit', edit_link_path(@link) %> |
+<%= link_to 'back', links_path %>

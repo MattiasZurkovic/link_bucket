@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>the link bucket</h1>
+<h4>chuck your favorite links here for other people to see!</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>points</th>
+      <th>title</th>
+      <th>url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @links.each do |link| %>
+      <tr>
+        <td> <%= link.get_upvotes.size %> </td>
+        <td> <%= link.title %> </td>
+        <td> <%= link_to link.url, link %> </td>
+        <!-- <td> <%= link_to 'Show', link %> </td> -->
+        <td> <%= link_to "upvote", like_link_path(link), method: :put %> </td>
+        <td> <%= link_to "downvote", dislike_link_path(link), method: :put %> </td>
+
+        <% if link.user == current_user %>
+            <td><%= link_to 'Edit', edit_link_path(link) %></td>
+            <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
