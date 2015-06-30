@@ -1,8 +1,11 @@
 == README
 
 Author: Mattias Zurkovic
+
 File Name: link_bucket
 
+:+1: This is the code for link_bucket. Currently, link_bucket is under development - the site allows users to post their links
+in one place.
 
 * Ruby version: 2.0.0p645
 
