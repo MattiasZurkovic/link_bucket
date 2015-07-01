@@ -1,23 +1,21 @@
-== README
-
-Author: Mattias Zurkovic
-
-File Name: link_bucket
-
-:+1: This is the code for link_bucket. Currently, link_bucket is under development - the site allows users to post their links
+== The link bucket Source Code!
+This is the code for link_bucket. Currently, link_bucket is under development - the site allows users to post their links
 in one place.
-
+For this we are currently using the Devise gem for users (authentication, sign ups, etc.), the acts_as_votable gem
+for the post voting system and the Simple Form gem for the comment system.
+During development we are using the default WEBrick web server, just so we can get things up and running, without
+initializing an apache server which we will be configuring later in development.
+:+1:
 * Ruby version: 2.0.0p645
-
 * Rails Version: 4.2.3
-
-* Configuration
-
-* Database: MySQL
-
-* Testing the app:
+* For the full list of dependencies/gems look in the <tt>Gemfile<tt>
+:+1:
+== Testing/Starting the App:
+As stated above, we are currently using the default WEBrick server that comes pre-configured with RoR. And
+if you do not already know how to start the Application follow these steps.
   1. Go to the root of the application (where you cloned it into)
-  2. In the terminal type <tt>rails s</tt> or <tt>rails server</tt> (This will start the web server)
-  3. Go to <tt>localhost:3000</tt> in your browser
+  2. Run <tt>bundle install<tt> to make sure you have the app dependencies
+  3. In the terminal type <tt>rails s</tt> or <tt>rails server</tt>
+  4. Hop into your browser and go to <tt>localhost:3000</tt>
 
-Have Fun and happy coding! :-)
+Feel free to change what you like -- Have Fun and happy coding!
