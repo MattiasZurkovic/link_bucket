@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="master">
-  
+
 <% @links.each do |link| %>
   <div class="post_row">
 
@@ -32,8 +32,15 @@
 
     <!-- Title of post -->
     <h3>
-      <%= link_to link.title, link %><br>
-      <div class="submitted">submitted <%= time_ago_in_words(link.created_at) %> ago</div>
+      <%= link_to link.title, link %>
+      <div class="submitted">submitted <%= time_ago_in_words(link.created_at) %> ago
+
+        <% if link.user == current_user %>
+            <%= link_to 'Edit | ', edit_link_path(link) %>
+            <%= link_to 'Delete', link, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+
+      </div>
     </h3>
 
   </div>

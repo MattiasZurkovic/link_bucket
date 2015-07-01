@@ -7,9 +7,23 @@
 
 <p>
   <strong>Url:</strong>
-  <!-- THIS IS GOOD :::  <a href="<%= @link.url %>"><%= @link.url %></a> -->
   <%= @link.url %>
 </p>
 
 <%= link_to 'edit', edit_link_path(@link) %> |
 <%= link_to 'back', links_path %>
+
+<h3 class="comments_title">
+  <%= @link.comments.count %> Comments
+</h3>
+
+<div id="comments">
+  <%= render :partial => @link.comments %>
+</div>
+<%= simple_form_for [@link, Comment.new]  do |f| %>
+  <div class="field">
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <br>
+  <%= f.submit "Add Comment", class: "btn btn-primary" %>
+<% end %>
