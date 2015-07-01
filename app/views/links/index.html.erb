@@ -33,7 +33,7 @@
     <!-- Title of post -->
     <h3>
       <%= link_to link.title, link %>
-      <div class="submitted">submitted <%= time_ago_in_words(link.created_at) %> ago
+      <div class="submitted">submitted <%= time_ago_in_words(link.created_at) %> ago by <%= link.user.name %>
 
         <% if link.user == current_user %>
             <%= link_to 'Edit | ', edit_link_path(link) %>
