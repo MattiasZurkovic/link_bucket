@@ -1,0 +1,100 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  background-color: #ECEFF1;
+}
+
+.master {
+  width: 90%;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+.submitted {
+  padding-top: 7px;
+  font-size: 12px;
+}
+
+.post_row h3 {
+  padding-top: 6px;
+  width: 50%;
+}
+
+.vote_actions {
+  float: left;
+  width: 25px;
+}
+
+.top_bar {
+  width: 80%;
+  margin: auto;
+  height: 20%;
+}
+
+.top_bar h2 {
+  text-align: center;
+}
+
+.show_score {
+  padding-left: 3px;
+  padding-bottom: 1px;
+}
+
+
+
+
+#logo {
+	font-size: 26px;
+	padding: 15px 0;
+	a {
+		color: #2F363E;
+	}
+}
+
+#main_content {
+	#content {
+		float: none;
+	}
+	padding-bottom: 100px;
+	.link {
+		padding: 2em 1em;
+		border-bottom: 1px solid #e9e9e9;
+		.title {
+
+			a {
+				color: #FF4500;
+			}
+		}
+	}
+	.comments_title {
+		margin-top: 2em;
+	}
+	#comments {
+		.comment {
+			padding: 1em 0;
+			border-top: 1px solid #E9E9E9;
+			.lead {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

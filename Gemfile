@@ -14,6 +14,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Bootstrao Sass
+gem 'bootstrap-sass', '~> 3.3.5'
+
 # Voting system
 gem 'acts_as_votable', '~> 0.10.0'
 
