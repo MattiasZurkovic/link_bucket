@@ -9,7 +9,7 @@ initializing an apache server which we will be configuring later in development.
 * Ruby version: 2.0.0p645
 * Rails Version: 4.2.3
 * For the full list of dependencies/gems look in the <tt>Gemfile<tt>
-:+1:
+
 == Testing/Starting the App:
 As stated above, we are currently using the default WEBrick server that comes pre-configured with RoR. And
 if you do not already know how to start the Application follow these steps:
