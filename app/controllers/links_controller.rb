@@ -6,7 +6,8 @@ class LinksController < ApplicationController
   def index
     @links = Link.all
     # Orders posts (Default is newst -> oldest) and adds Pagination
-    @links = Link.order("created_at DESC").paginate(page: params[:page], per_page: 10)
+    @links = Link.order("created_at DESC")
+    @links = Link.paginate(page: params[:page], per_page: 10)
 
     if params[:search]
       @links = Link.where('title LIKE ?', "%#{params[:search]}%")
