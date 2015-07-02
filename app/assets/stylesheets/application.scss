@@ -16,24 +16,31 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,900);
 
 body {
   background-color: #cfd8dc;
+  font-family: 'Roboto', sans-serif;
+  color: #263238;
 }
 
-.master {
+.container {
   width: 70%;
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-top: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-bottom: 15px;
+  background-color: #eceff1;
+  margin-top: 40px;
+  border: 1px solid #b0bec5;
+  border-radius: 4px;
 }
 
 .submitted {
   padding-top: 7px;
   font-size: 12px;
   color: #455A64
-
 }
 
 #notice_wrapper {
@@ -56,6 +63,38 @@ body {
   width: 50%;
 }
 
+#right_container {
+  float: right;
+  width: 250px auto;
+  border: 1px solid #b0bec5;
+  border-radius: 4px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+#search_container, p {
+  padding-bottom: 1px;
+}
+
+.search_box {
+  border: 1px solid #b0bec5;
+  border-radius: 2px;
+  width: 225px;
+}
+
+.search_button {
+  border: 1px solid #b0bec5;
+  border-radius: 2px;
+}
+
+.search_button:hover {
+  background-color: #cfd8dc;
+}
+
+.post_row {
+  padding-bottom: 8px;
+}
+
 .vote_actions {
   float: left;
   width: 25px;
@@ -70,6 +109,7 @@ body {
   width: 100%;
   padding: 0.5rem;
   background-color: #eceff1;
+  border-bottom: 1px solid #b0bec5;
 }
 
 #user_options {

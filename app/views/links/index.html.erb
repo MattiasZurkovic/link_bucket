@@ -1,21 +1,25 @@
 
-<div class="master">
+<div class="container">
 
 <!--<%= form_tag("/search", method: "get") do %>
     <%= text_field_tag 'query', ''%>
     <%= submit_tag("search") %>
   <% end %> -->
-
-  <%= form_tag links_path, :method => 'get' do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "search", :name => nil%>
-    </p>
-  <% end %>
+<div id="right_container">
+  <p>search the link bucket</p>
+  <div id="search_form">
+    <%= form_tag links_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :search, params[:search], class: 'search_box', :placeholder => "what you looking for?" %>
+        <%= submit_tag "go!", :name => nil, class: 'search_button'%>
+      </p>
+    <% end %>
+  </div>
+</div>
   <!-- Show query -->
   <% @links.to_a %>
 <% if params[:search] %>
-  <div id="query_return">results for "<%= params[:search] %>"</div>
+  <div id="query_return">results for "<b><%= params[:search] %></b>"</div>
 <% end %>
 
 <% @links.each do |link| %>
