@@ -79,6 +79,7 @@ class LinksController < ApplicationController
     @link = Link.find(params[:id])
     @link.downvote_by current_user
     redirect_to links_path
+
   end
 
   # Link orginization
