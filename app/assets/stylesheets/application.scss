@@ -18,11 +18,11 @@
 @import "bootstrap";
 
 body {
-  background-color: #ECEFF1;
+  background-color: #cfd8dc;
 }
 
 .master {
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -46,7 +46,7 @@ body {
 
 .notice {
   text-align: center;
-  padding: 1.7rem 0;
+  padding: 2.9rem 0;
   margin: 0;
   color: #fff;
 }
@@ -61,29 +61,27 @@ body {
   width: 25px;
 }
 
-.top_bar {
-  width: 80%;
-  margin: auto;
-  height: 20%;
-}
-
-.top_bar h2 {
-  text-align: center;
-}
-
 .show_score {
   padding-left: 3px;
   padding-bottom: 1px;
 }
 
+.nav_container {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #eceff1;
+}
 
-
+#user_options {
+  background-color: #ffffff;
+}
 
 #logo {
 	font-size: 22px;
 	padding: 15px 0;
 	a {
 		color: #2F363E;
+    text-decoration: none;
 	}
 }
 
@@ -92,26 +90,8 @@ body {
 		float: none;
 	}
 	padding-bottom: 100px;
-	.link {
-		padding: 2em 1em;
-		border-bottom: 1px solid #e9e9e9;
-		.title {
 
-			a {
-				color: #FF4500;
-			}
-		}
-	}
 	.comments_title {
 		margin-top: 2em;
-	}
-	#comments {
-		.comment {
-			padding: 1em 0;
-			border-top: 1px solid #E9E9E9;
-			.lead {
-				margin-bottom: 0;
-			}
-		}
 	}
 }
