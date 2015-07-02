@@ -62,6 +62,8 @@
 <% end %>
 
 </div>
+
+<%= will_paginate @links, renderer: BootstrapPagination::Rails, previous_label: "prev", next_label: "next", inner_window: 1, outer_window: 0 %>
 <!--<table>
   <tbody>
 

@@ -5,13 +5,12 @@ class LinksController < ApplicationController
   # GET /links.json
   def index
     @links = Link.all
-    # Orders posts (Default is newst -> oldest)
-    @links = Link.order("created_at DESC")
+    # Orders posts (Default is newst -> oldest) and adds Pagination
+    @links = Link.order("created_at DESC").paginate(page: params[:page], per_page: 10)
 
     if params[:search]
       @links = Link.where('title LIKE ?', "%#{params[:search]}%")
     end
-
   end
 
   # GET /links/1
