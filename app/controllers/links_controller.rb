@@ -9,9 +9,7 @@ class LinksController < ApplicationController
     @links = Link.order("created_at DESC")
 
     if params[:search]
-      #@links = Link.find(:all, :conditions => ['title LIKE ?', '%{#params[:search]}%'])
-      @links = Link.where('title LIKE ?', '%{#params[:search]}%')
-      @links.to_a
+      @links = Link.where('title LIKE ?', "%#{params[:search]}%")
     end
 
   end

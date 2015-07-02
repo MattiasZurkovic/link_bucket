@@ -13,7 +13,10 @@
     </p>
   <% end %>
   <!-- Show query -->
-  <%= @links %>
+  <% @links.to_a %>
+<% if params[:search] %>
+  <div id="query_return">results for "<%= params[:search] %>"</div>
+<% end %>
 
 <% @links.each do |link| %>
   <div class="post_row">
