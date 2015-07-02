@@ -7,6 +7,13 @@ class LinksController < ApplicationController
     @links = Link.all
     # Orders posts (Default is newst -> oldest)
     @links = Link.order("created_at DESC")
+
+    if params[:search]
+      #@links = Link.find(:all, :conditions => ['title LIKE ?', '%{#params[:search]}%'])
+      @links = Link.where('title LIKE ?', '%{#params[:search]}%')
+      @links.to_a
+    end
+
   end
 
   # GET /links/1
@@ -78,7 +85,6 @@ class LinksController < ApplicationController
   end
 
   # Link orginization
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

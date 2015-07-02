@@ -1,6 +1,20 @@
 
 <div class="master">
 
+<!--<%= form_tag("/search", method: "get") do %>
+    <%= text_field_tag 'query', ''%>
+    <%= submit_tag("search") %>
+  <% end %> -->
+
+  <%= form_tag links_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "search", :name => nil%>
+    </p>
+  <% end %>
+  <!-- Show query -->
+  <%= @links %>
+
 <% @links.each do |link| %>
   <div class="post_row">
 
