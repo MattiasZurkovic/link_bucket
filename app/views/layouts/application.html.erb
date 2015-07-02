@@ -1,29 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LinkBucket</title>
+  <title>the link bucket</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<!-- <div class="top_bar">
 
-  <% if user_signed_in? %>
-    <ul>
-      <li> <%= link_to "Submit", new_link_path %> </li>
-      <li> <%= link_to "Account", edit_user_registration_path %> </li>
-      <li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </li>
-    </ul>
-
-  <% else %>
-    <ul>
-      <li> <%= link_to "Sign up", new_user_registration_path %> </li>
-      <li> <%= link_to "Sign in", new_user_session_path %></li>
-    </ul>
-  <% end %>
-
-</div> -->
+<% if notice %>
+  <div id="notice_wrapper">
+    <p class="notice"><%= notice %></p>
+  </div>
+<% end %>
 
 <header class="navbar navbar-default" role="navigation">
     <div class="navbar-inner">
@@ -32,14 +21,14 @@
         <nav class="collapse navbar-collapse navbar-ex1-collapse">
         	<% if user_signed_in? -%>
 						<ul class="nav navbar-nav navbar-right">
-							<li><%= link_to 'Submit', new_link_path %></li>
-							<li><%= link_to 'Account', edit_user_registration_path %></li>
-							<li><%= link_to 'Log out', destroy_user_session_path, :method => :delete %></li>
+							<li><%= link_to 'submit', new_link_path %></li>
+							<li><%= link_to 'account', edit_user_registration_path %></li>
+							<li><%= link_to 'log out', destroy_user_session_path, :method => :delete %></li>
 						</ul>
 					<% else -%>
 						<ul class="nav navbar-nav pull-right">
-							<li><%= link_to 'Sign up', new_user_registration_path %></li>
-							<li><%= link_to 'Log in', new_user_session_path %></li>
+							<li><%= link_to 'sign up', new_user_registration_path %></li>
+							<li><%= link_to 'log in', new_user_session_path %></li>
 						</ul>
 					<% end -%>
         </nav>
@@ -47,13 +36,23 @@
     </div>
   </header>
 
-<% flash.each do |name, msg| %>
-    <%= content_tag(:div, msg, class: "alert alert-info") %>
-<% end %>
+<!--  <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert alert-info") %>
+  <% end %> -->
 
 <!-- Before yeild! -->
 <%= yield %>
 <!-- After yeild! -->
+
+<script>
+  $(document).ready(function(){
+    setTimeout(function(){
+      $('#notice_wrapper').fadeOut("slow", function(){
+        $(this).remove();
+      })
+    }, 2000);
+  });
+</script>
 
 </body>
 </html>

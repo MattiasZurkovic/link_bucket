@@ -36,6 +36,21 @@ body {
 
 }
 
+#notice_wrapper {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background: rgba(35, 82, 124, 0.5)
+}
+
+.notice {
+  text-align: center;
+  padding: 1.7rem 0;
+  margin: 0;
+  color: #fff;
+}
+
 .post_row h3 {
   padding-top: 6px;
   width: 50%;
@@ -65,7 +80,7 @@ body {
 
 
 #logo {
-	font-size: 26px;
+	font-size: 22px;
 	padding: 15px 0;
 	a {
 		color: #2F363E;
