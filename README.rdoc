@@ -19,10 +19,10 @@ design will be changed at a later stage in development).:+1:
 * For the full list of dependencies/gems look in the <tt>Gemfile<tt>
 
 == Testing/Starting the App:
-As stated above, we are currently using the default WEBrick server that comes pre-configured with RoR. And
-if you do not already know how to start the Application follow these steps:
+As stated above, I am currently using the default WEBrick server that comes pre-configured with RoR. And
+if you do not already know how to start a rails application, follow these steps:
 
-1. Go to the root of the application (where you cloned it into)
+1. Go to the root of the application (where you cloned it into, example: <tt>$ cd/Documents/code/link_bucket</tt>)
 2. Run <tt>bundle install</tt> to make sure you have the app dependencies
 3. In the terminal type <tt>rails s</tt> or <tt>rails server</tt>
 4. Hop into your browser and go to <tt>localhost:3000</tt>
