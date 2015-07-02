@@ -23,7 +23,7 @@ As stated above, we are currently using the default WEBrick server that comes pr
 if you do not already know how to start the Application follow these steps:
 
 1. Go to the root of the application (where you cloned it into)
-2. Run <tt>bundle install<tt> to make sure you have the app dependencies
+2. Run <tt>bundle install</tt> to make sure you have the app dependencies
 3. In the terminal type <tt>rails s</tt> or <tt>rails server</tt>
 4. Hop into your browser and go to <tt>localhost:3000</tt>
 
