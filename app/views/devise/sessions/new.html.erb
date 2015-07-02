@@ -1,10 +1,12 @@
-<h2>Log in</h2>
+<div class="container", id="form">
+
+<h2>log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control", :autofocus => true, autocomplete: "on" %>
+    <%= f.label :username %><br />
+    <%= f.text_field :name, :autofocus => true, autocomplete: "on" %>
   </div>
 
   <div class="field">
@@ -25,8 +27,10 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "log in" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>

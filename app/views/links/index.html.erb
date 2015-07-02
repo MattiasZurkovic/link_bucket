@@ -5,17 +5,32 @@
     <%= text_field_tag 'query', ''%>
     <%= submit_tag("search") %>
   <% end %> -->
-<div id="right_container">
-  <p>search the link bucket</p>
-  <div id="search_form">
-    <%= form_tag links_path, :method => 'get' do %>
-      <p>
-        <%= text_field_tag :search, params[:search], class: 'search_box', :placeholder => "what you looking for?" %>
-        <%= submit_tag "go!", :name => nil, class: 'search_button'%>
-      </p>
-    <% end %>
-  </div>
+<div class="right_options">
+
+  <div id="search_container">
+    <p>search the link bucket</p>
+      <div id="search_form">
+          <%= form_tag links_path, :method => 'get' do %>
+            <p>
+              <%= text_field_tag :search, params[:search], class: 'search_box', :placeholder => "what you looking for?" %>
+              <%= submit_tag "go!", :name => nil, class: 'search_button'%>
+            </p>
+          <% end %>
+        </div>
+      </div>
+
+    <div id="right_submit">
+      <!-- Checks to see if user is signed in, and when they click it will allow them to post -->
+      <% if user_signed_in? -%>
+        <%= link_to 'submit', new_link_path %>
+      <% else -%>
+        <!-- If someone is not logged in, and wants to post something, redirects the to login page -->
+        <%= link_to 'submit', '/users/sign_in' %>
+      <% end -%>
+    </div>
+
 </div>
+
   <!-- Show query -->
   <% @links.to_a %>
 <% if params[:search] %>
@@ -24,7 +39,6 @@
 
 <% @links.each do |link| %>
   <div class="post_row">
-
     <!-- Voting actions -->
     <div class="vote_actions">
       <!-- Upvote -->
