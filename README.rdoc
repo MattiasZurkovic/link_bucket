@@ -1,13 +1,21 @@
 == The link bucket Source Code!
 This is the code for link_bucket. Currently, link_bucket is under development - the site allows users to post their links
-in one place.
-For this we are currently using the Devise gem for users (authentication, sign ups, etc.), the acts_as_votable gem
+in one place - for other people to see, like, comment and share their interests!
+For this I am currently using the Devise gem for users (authentication, sign ups, etc.), the acts_as_votable gem
 for the post voting system and the Simple Form gem for the comment system.
-During development we are using the default WEBrick web server, just so we can get things up and running, without
-initializing an apache server which we will be configuring later in development.
-:+1:
-* Ruby version: 2.0.0p645
-* Rails Version: 4.2.3
+During development I will be using the default WEBrick web server, just so I can get things up and running, without
+initializing an apache server which I will be configuring later in development.
+
+Also, feel free to make any design changes due to my somewhat 'primitive' UI I have right now (do not worry,
+design will be changed at a later stage in development).:+1:
+
+== Dependencies
+* Ruby v2.0.0p645
+* Rails v4.2.3
+* Devise v3.5.1
+* acts_as_votable v0.10.0
+* simple_form v3.1.0
+* Bootstrap Sass
 * For the full list of dependencies/gems look in the <tt>Gemfile<tt>
 
 == Testing/Starting the App:
@@ -18,5 +26,9 @@ if you do not already know how to start the Application follow these steps:
 2. Run <tt>bundle install<tt> to make sure you have the app dependencies
 3. In the terminal type <tt>rails s</tt> or <tt>rails server</tt>
 4. Hop into your browser and go to <tt>localhost:3000</tt>
+
+== Why was this made?
+I wanted to make this to get a good grasp of rails and web development. Hopefully, later on, more people
+will join me in updating and maintaining the site!
 
 Feel free to change what you like -- Have Fun and happy coding!
