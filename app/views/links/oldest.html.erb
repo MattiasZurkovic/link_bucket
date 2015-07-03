@@ -1,11 +1,9 @@
-
 <div class="container">
 
 <!--<%= form_tag("/search", method: "get") do %>
     <%= text_field_tag 'query', ''%>
     <%= submit_tag("search") %>
   <% end %> -->
-
 <div class="right_options">
 
   <div id="search_container">
@@ -34,7 +32,6 @@
         <p>sort by:</p>
         <%= link_to 'newest', '/new' %>
         <%= link_to 'oldest', '/old' %>
-        <!--<%= link_to 'popular', '/popular' %>-->
       </div>
 
 </div>
@@ -53,8 +50,6 @@
       <div id="upvote">
       <%= link_to like_link_path(link), method: :put, class: "voting_actions" do %>
         <span class="glyphicon glyphicon-circle-arrow-up"></span>
-        <%= link.get_upvotes.size %>
-        
       <% end %>
       </div>
 

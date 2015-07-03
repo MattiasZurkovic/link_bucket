@@ -7,10 +7,23 @@ class LinksController < ApplicationController
     @links = Link.all
     # Orders posts (Default is newst -> oldest) and sets paginate paramaters
     @links = Link.order("created_at DESC").paginate(page: params[:page], per_page: 10)
+    
+    if params[:search]
+      @links = Link.where('title LIKE ?', "%#{params[:search]}%")
+    end
+  end
+
+  def oldest
+    @links = Link.all
+    # Orders posts (Default is newst -> oldest) and sets paginate paramaters
+    @links = Link.order("created_at ASC").paginate(page: params[:page], per_page: 10)
 
     if params[:search]
       @links = Link.where('title LIKE ?', "%#{params[:search]}%")
     end
+  end
+
+  def hottest
   end
 
   # GET /links/1
@@ -79,7 +92,6 @@ class LinksController < ApplicationController
     @link = Link.find(params[:id])
     @link.downvote_by current_user
     redirect_to links_path
-
   end
 
   # Link orginization
