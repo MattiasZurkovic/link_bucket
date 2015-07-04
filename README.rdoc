@@ -26,14 +26,12 @@ have a MySQL database configured and installed, follow below:
   1. Go to http://dev.mysql.com/downloads/mysql/ and download the community edition
   2. Run the installer and make sure you set a password for the database. You will need this when you are configuring the Rails app.
   3. Once installed, open the MySQL command line client and enter your password.
-  4. Type in the command line <tt>CREATE DATABASE your_db_name;</tt> (if you directly cloned this repo, the database name is link_bucket_development,
-  but you can name it something else as long as you use that name in the <tt>database.yml</tt> file).
+  4. Type in the command line <tt>CREATE DATABASE your_db_name;</tt> (if you directly cloned this repo, the database name is link_bucket_development, but you can name it something else as long as you use that name in the <tt>database.yml</tt> file).
 
 * Configuring the app to use the database:
   1. By default, Rails uses SQLite for its database so to change it you will need to open up the <tt>database.yml</tt> file (under the config directory).
   2. Enter the fields for your database name, username, host, and password.
-  3. For host, you should put <tt>localhost</tt>. for password you will put the password of your MySQL database, and for the username <tt>root</tt>, and
-  the database name should be what you named it in the MySQL command line client.
+  3. For host, you should put <tt>localhost</tt>. for password you will put the password of your MySQL database, and for the username <tt>root</tt>, and the database name should be what you named it in the MySQL command line client.
   4. Now you are ready to start the app!
 
 = Testing/Starting the App:
