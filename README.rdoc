@@ -9,25 +9,43 @@ initializing an apache server which I will be configuring later in development.
 Also, feel free to make any design changes due to my somewhat 'primitive' UI I have right now (do not worry,
 design will be changed at a later stage in development).:+1:
 
-== Dependencies
+= Dependencies
 * Ruby v2.0.0p645
 * Rails v4.2.3
 * Devise v3.5.1
 * acts_as_votable v0.10.0
 * simple_form v3.1.0
+* MySQL - (and the MySQL2 gem)
 * Bootstrap Sass
 * For the full list of dependencies/gems look in the <tt>Gemfile<tt>
 
-== Testing/Starting the App:
-As stated above, I am currently using the default WEBrick server that comes pre-configured with RoR. And
-if you do not already know how to start a rails application, follow these steps:
+= Installing MySQL
+If you already know or already have MySQL installed you don't need to reinstall it. Just skip this section. However, if you do not
+have a MySQL database configured and installed, follow below:
+* Installing the database:
+  1. Go to http://dev.mysql.com/downloads/mysql/ and download the community edition
+  2. Run the installer and make sure you set a password for the database. You will need this when you are configuring the Rails app.
+  3. Once installed, open the MySQL command line client and enter your password.
+  4. Type in the command line <tt>CREATE DATABASE your_db_name;</tt> (if you directly cloned this repo, the database name is link_bucket_development,
+  but you can name it something else as long as you use that name in the <tt>database.yml</tt> file).
+
+* Configuring the app to use the database:
+  1. By default, Rails uses SQLite for its database so to change it you will need to open up the <tt>database.yml</tt> file (under the config directory).
+  2. Enter the fields for your database name, username, host, and password.
+  3. For host, you should put <tt>localhost</tt>. for password you will put the password of your MySQL database, and for the username <tt>root</tt>, and
+  the database name should be what you named it in the MySQL command line client.
+  4. Now you are ready to start the app!
+
+= Testing/Starting the App:
+I am currently using the default WEBrick server that comes pre-configured with RoR. And if you do not already know how to start a rails
+application, follow these steps (make sure you have a MySQL database installed and configured):
 
 1. Go to the root of the application (where you cloned it into, example: <tt>$ cd/Documents/code/link_bucket</tt>)
 2. Run <tt>bundle install</tt> to make sure you have the app dependencies
 3. In the terminal type <tt>rails s</tt> or <tt>rails server</tt>
 4. Hop into your browser and go to <tt>localhost:3000</tt>
 
-== Why was this made?
+= Why was this made?
 I wanted to make this to get a good grasp of rails and web development. Hopefully, later on, more people
 will join me in updating and maintaining the site!
 
