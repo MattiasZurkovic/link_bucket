@@ -95,8 +95,11 @@
   </div>
 <% end %>
 
-<% if !params[:search] %>
-<%= will_paginate @links, renderer: BootstrapPagination::Rails, previous_label: "prev", next_label: "next", inner_window: 1, outer_window: 0 %>
-<% end %>
+</div>
 
+
+<div class="pagination">
+  <% if !params[:search] %>
+    <%= will_paginate @links, renderer: BootstrapPagination::Rails, previous_label: "<", next_label: ">", inner_window: 1, outer_window: 0 %>
+  <% end %>
 </div>
