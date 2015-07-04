@@ -7,10 +7,17 @@ class LinksController < ApplicationController
     @links = Link.all
     # Orders posts (Default is newst -> oldest) and sets paginate paramaters
     @links = Link.order("created_at DESC").paginate(page: params[:page], per_page: 10)
-    
+
     if params[:search]
       @links = Link.where('title LIKE ?', "%#{params[:search]}%")
     end
+  end
+
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @link = Link.find(params[:id])
+    @link.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "thank you for voting"
   end
 
   def oldest
@@ -24,6 +31,13 @@ class LinksController < ApplicationController
   end
 
   def hottest
+    @links = Link.all
+    @links = Link.popular.paginate(page: params[:page], per_page: 10)
+
+    if params[:search]
+      @links = Link.where('title LIKE ?', "%#{params[:search]}%")
+    end
+
   end
 
   # GET /links/1
@@ -47,7 +61,7 @@ class LinksController < ApplicationController
 
     respond_to do |format|
       if @link.save
-        format.html { redirect_to @link, notice: 'Link was successfully created.' }
+        format.html { redirect_to @link, notice: 'link was successfully created.' }
         format.json { render :show, status: :created, location: @link }
       else
         format.html { render :new }
@@ -61,7 +75,7 @@ class LinksController < ApplicationController
   def update
     respond_to do |format|
       if @link.update(link_params)
-        format.html { redirect_to @link, notice: 'Link was successfully updated.' }
+        format.html { redirect_to @link, notice: 'link was successfully updated.' }
         format.json { render :show, status: :ok, location: @link }
       else
         format.html { render :edit }
@@ -75,7 +89,7 @@ class LinksController < ApplicationController
   def destroy
     @link.destroy
     respond_to do |format|
-      format.html { redirect_to links_url, notice: 'Link was successfully deleted.' }
+      format.html { redirect_to links_url, notice: 'link was successfully deleted.' }
       format.json { head :no_content }
     end
   end

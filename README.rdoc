@@ -17,7 +17,7 @@ design will be changed at a later stage in development).:+1:
 * simple_form v3.1.0
 * MySQL - (and the MySQL2 gem)
 * Bootstrap Sass
-* For the full list of dependencies/gems look in the <tt>Gemfile<tt>
+* For the full list of dependencies/gems look in the <tt>Gemfile</tt>
 
 = Installing MySQL
 If you already know or already have MySQL installed you don't need to reinstall it. Just skip this section. However, if you do not
