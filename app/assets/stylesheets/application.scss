@@ -14,14 +14,16 @@
  *= require_self
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+//@import "bootstrap-sprockets";
+//@import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,900);
 
 body {
   background-color: #cfd8dc;
   font-family: 'Roboto', sans-serif;
   color: #263238;
+  margin: 0;
+  padding: 0;
 }
 
 hr {
@@ -53,6 +55,10 @@ hr {
   float: right;
 }
 
+a {
+  color: #009688;
+}
+
 .submitted {
   padding-top: 7px;
   font-size: 12px;
@@ -77,6 +83,11 @@ hr {
 .post_row h3 {
   padding-top: 5px;
   width: 50%;
+}
+
+.pagination {
+  width: 60%;
+  margin: 0 auto;
 }
 
 #search_container {
@@ -113,7 +124,6 @@ hr {
 
 #right_submit {
   float: right;
-  margin-top: 150px;
 }
 
 .post_row {
@@ -132,36 +142,35 @@ hr {
 
 .nav_container {
   width: 100%;
-  padding: 0.5rem;
+  height: 75px;
+  margin: 0 auto;
   background-color: #eceff1;
   border-bottom: 1px solid #b0bec5;
 }
 
+.user_nav ul, li {
+  list-style: none;
+  display: block;
+  float: left;
+  padding-right: 20px;
+}
+
+.mini_nav_container {
+  width: 75%;
+  margin: 0 auto;
+}
+
 #user_options {
-  background-color: #ffffff;
+  float: right;
+  padding-top: 9px;
 }
 
 #logo {
 	font-size: 22px;
-	padding: 15px 0;
+  padding: 1.4rem;
+  float: left;
 	a {
 		color: #2F363E;
     text-decoration: none;
-	}
-}
-
-#form {
-  padding-top: 0px;
-  text-align: center;
-}
-
-#main_content {
-	#content {
-		float: none;
-	}
-	padding-bottom: 100px;
-
-	.comments_title {
-		margin-top: 2em;
 	}
 }

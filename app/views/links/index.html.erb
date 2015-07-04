@@ -27,9 +27,11 @@
 
       <div id="sort_by_main">
         <p>sort by:</p>
-        <%= link_to 'popular', '/popular' %>
-        <%= link_to 'newest', '/new' %>
-        <%= link_to 'oldest', '/old' %>
+        <div id="sort_options">
+          <%= link_to 'popular', '/popular' %>
+          <%= link_to 'newest', '/new' %>
+          <%= link_to 'oldest', '/old' %>
+        </div>
       </div>
 
 </div>
@@ -49,7 +51,7 @@
       <!-- Upvote -->
       <div id="upvote">
         <%= link_to vote_link_path(link, type: "up"), method: "post"  do%>
-          <span class="glyphicon glyphicon-circle-arrow-up"></span>
+           <i class="material-icons">thumb_up</i>
         <% end %>
       </div>
 
@@ -60,7 +62,7 @@
       <!-- Downvote -->
       <div id="downvote">
         <%= link_to vote_link_path(link, type: "down"), method: "post" do%>
-          <span class="glyphicon glyphicon-circle-arrow-down">
+          <i class="material-icons">thumb_down</i>
         <% end %>
       </div>
 
@@ -95,8 +97,10 @@
   </div>
 <% end %>
 
-<% if !params[:search] %>
-<%= will_paginate @links, renderer: BootstrapPagination::Rails, previous_label: "prev", next_label: "next", inner_window: 1, outer_window: 0 %>
-<% end %>
+</div>
 
+<div class="pagination">
+  <% if !params[:search] %>
+    <%= will_paginate @links, renderer: BootstrapPagination::Rails, previous_label: "prev", next_label: "next", inner_window: 1, outer_window: 0 %>
+  <% end %>
 </div>

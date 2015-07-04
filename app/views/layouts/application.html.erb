@@ -5,6 +5,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
 
@@ -15,27 +18,26 @@
 <% end %>
 
   <div class="nav_container">
-    <div id="mini_nav_container">
-    <div id="logo" class="navbar-brand"><%= link_to "the link bucket", root_path %></div>
 
-    <nav class="collapse navbar-collapse navbar-ex1-collapse">
+    <div class="mini_nav_container">
+    <div id="logo"><%= link_to "the link bucket", root_path %></div>
+
       <div id="user_options">
       <% if user_signed_in? -%>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="user_nav">
+          <li><%= link_to current_user.name, edit_user_registration_path %></li>
           <li><%= link_to 'submit', new_link_path %></li>
-          <li><%= link_to 'account', edit_user_registration_path %></li>
           <li><%= link_to 'log out', destroy_user_session_path, :method => :delete %></li>
         </ul>
       <% else -%>
-        <ul class="nav navbar-nav pull-right">
+        <ul class="user_nav">
           <li><%= link_to 'sign up', new_user_registration_path %></li>
           <li><%= link_to 'log in', new_user_session_path %></li>
         </ul>
       <% end -%>
-      </div>
-    </nav>
+    </div>
+    </div>
 
-  </div>
   </div>
 <!--  <% flash.each do |name, msg| %>
       <%= content_tag(:div, msg, class: "alert alert-info") %>

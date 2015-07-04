@@ -49,7 +49,7 @@
       <!-- Upvote -->
       <div id="upvote">
         <%= link_to vote_link_path(link, type: "up"), method: "post"  do%>
-          <span class="glyphicon glyphicon-circle-arrow-up"></span>
+           <i class="material-icons">thumb_up</i>
         <% end %>
       </div>
 
@@ -60,7 +60,7 @@
       <!-- Downvote -->
       <div id="downvote">
         <%= link_to vote_link_path(link, type: "down"), method: "post" do%>
-          <span class="glyphicon glyphicon-circle-arrow-down">
+          <i class="material-icons">thumb_down</i>
         <% end %>
       </div>
 
