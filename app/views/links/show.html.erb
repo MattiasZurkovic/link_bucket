@@ -1,5 +1,37 @@
 <div class="container">
 
+
+  <nav class="tabMenu rightBar">
+
+    <div id="search_container">
+      <p>post stats:</p><hr />
+      </div>
+
+
+  		<div class="label"></div>
+  		<div id="sort_by_main">
+
+          <%= link_to '/popular' do %>
+            <button>popularity</button>
+          <% end %>
+
+          <%= link_to '/new' do %>
+            <button>newest</button>
+          <% end %>
+
+          <%= link_to '/old' do %>
+            <button>oldest</button>
+          <% end %>
+  		</div>
+
+          <div class="label">more on us:</div>
+
+          <a class="btn btn-default width-100">what is the link bucket?</a>
+          <a class="btn btn-default width-100">our policy</a>
+
+  	</nav>
+
+
 <p>
   <strong>title:</strong>
   <%= @link.title %>

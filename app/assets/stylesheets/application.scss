@@ -18,6 +18,10 @@
 //@import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,900);
 
+@import "materialize/components/color";
+$primary-color: color("blue", "lighten-2") !default;
+@import 'materialize';
+
 body {
   background-color: #cfd8dc;
   font-family: 'Roboto', sans-serif;
@@ -57,7 +61,7 @@ hr {
 }
 
 a {
-  color: #009688;
+  color: #00acc1;
 }
 
 .submitted {
@@ -126,6 +130,10 @@ a {
   padding-bottom: 8px;
 }
 
+.post_row2 {
+  width: 950px;
+}
+
 .vote_actions {
   float: left;
   width: 25px;
@@ -172,7 +180,7 @@ a {
 }
 
 .tabMenu.rightBar {
-  width: 250px auto;
+  width: 250px;
   display: block;
   text-align: center;
 }
@@ -193,16 +201,17 @@ a {
 }
 
 button {
-  text-align: center;
-  border: 1px solid #b0bec5;
+  border: 1px solid #0097a7;
   border-radius: 4px;
   padding: 0.5em;
   margin-top: 15px;
+  background-color: #00acc1;
+  color: #fff;
   width: 100%;
 }
 
 button:hover {
-  background-color: #ffd54f;
+  background-color: #00838f;
   transition: .5s background-color;
 }
 

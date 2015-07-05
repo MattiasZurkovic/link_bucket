@@ -1,7 +1,7 @@
 
 <div class="container">
 
-  <nav class="tabMenu rightBar">
+  <div class="tabMenu rightBar">
 
     <div id="search_container">
       <p>search the link bucket</p><hr />
@@ -18,11 +18,11 @@
         <div id="right_submit">
             <% if user_signed_in? -%>
               <%= link_to new_link_path do %>
-                <button>submit link</button>
+                <button class="waves-effect waves-light btn">submit link</button>
               <% end %>
             <% else -%>
               <%= link_to '/users/sign_in' do %>
-                <button>submit link</button>
+                <button class="waves-effect waves-light btn">submit link</button>
               <% end %>
             <% end -%>
         </div>
@@ -31,24 +31,19 @@
   		<div id="sort_by_main">
 
           <%= link_to '/popular' do %>
-            <button>popularity</button>
+            <button class="waves-effect waves-light btn">popularity</button>
           <% end %>
 
           <%= link_to '/new' do %>
-            <button>newest</button>
+            <button class="waves-effect waves-light btn">newest</button>
           <% end %>
 
           <%= link_to '/old' do %>
-            <button>oldest</button>
+            <button class="waves-effect waves-light btn">oldest</button>
           <% end %>
   		</div>
 
-          <div class="label">more on us:</div>
-
-          <a class="btn btn-default width-100">what is the link bucket?</a>
-          <a class="btn btn-default width-100">our policy</a>
-
-  	</nav>
+  	</div>
 
   <!-- Show search query to user (what they searched for...) -->
   <% @links.to_a %>
@@ -57,58 +52,47 @@
 <% end %>
 
 <% @links.each do |link| %>
-  <div class="post_row">
+<div class="post_row2">
 
+  <div class="col s12 m6">
+     <div class="card blue-grey darken-1">
+       <div class="card-content white-text">
+         <span class="card-title">
 
-    <!-- Voting actions -->
-    <div class="vote_actions">
-      <!-- Upvote -->
-      <div id="upvote">
-        <%= link_to vote_link_path(link, type: "up"), method: "post"  do%>
-           <i class="material-icons">thumb_up</i>
-        <% end %>
-      </div>
+           <% if link.title.mb_chars.length < 37 %>
+             <%= link_to link.title, link %>
+           <% else %>
+             <%= link_to link.title.truncate(37), link %>
+           <% end %>
 
-      <div class="show_score">
-         <%= link.reputation_for(:votes).to_i %>
-      </div>
+         </span>
+         <p><p>
+         <p>submitted <%= time_ago_in_words(link.created_at) %> ago by <%= link.user.name %></p>
+       </div>
 
-      <!-- Downvote -->
-      <div id="downvote">
-        <%= link_to vote_link_path(link, type: "down"), method: "post" do%>
-          <i class="material-icons">thumb_down</i>
-        <% end %>
-      </div>
+       <div class="card-action">
 
-    </div>
+         <%= link_to vote_link_path(link, type: "up"), method: "post"  do%>
+            <i class="material-icons">thumb_up</i>
+         <% end %>
+         <a href="#"><%= link.reputation_for(:votes).to_i %></a>
+         <%= link_to vote_link_path(link, type: "down"), method: "post" do%>
+           <i class="material-icons">thumb_down</i>
+         <% end %>
 
-    <!-- Title of post -->
-    <h3>
-      <% if link.title.mb_chars.length < 37 %>
-        <%= link_to link.title, link %>
-      <% else %>
-        <%= link_to link.title.truncate(37), link %>
-      <% end %>
+         <p id="post_link_side">
+           <% if link.url.mb_chars.length < 22 %>
+             <%= link_to link.url, link %>
+           <% else %>
+             <%= link_to link.url.truncate(27), link %>
+           <% end %>
+         </p>
 
-      <div class="submitted">submitted <%= time_ago_in_words(link.created_at) %> ago by <%= link.user.name %>
+       </div>
+     </div>
+   </div>
 
-        <p id="post_link_side">
-          <% if link.url.mb_chars.length < 22 %>
-            (<%= link_to link.url, link %>)
-          <% else %>
-            (<%= link_to link.url.truncate(27), link %>)
-          <% end %>
-        </p>
-
-        <% if link.user == current_user %>
-            <%= link_to 'Edit | ', edit_link_path(link) %>
-            <%= link_to 'Delete', link, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-      </div>
-
-    </h3>
-
-  </div>
+</div>
 <% end %>
 
 </div>

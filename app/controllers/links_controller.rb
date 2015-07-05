@@ -94,14 +94,14 @@ class LinksController < ApplicationController
     end
   end
 
-  # Upvote action
+  # Upvote action *BAD*
   def upvote
     @link = Link.find(params[:id])
     @link.upvote_by current_user
     redirect_to links_path
   end
 
-  # Downvote action
+  # Downvote action *BAD*
   def downvote
     @link = Link.find(params[:id])
     @link.downvote_by current_user

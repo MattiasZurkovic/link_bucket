@@ -20,6 +20,9 @@ gem 'activerecord-reputation-system', require: 'reputation_system'
 # Pagination
 gem 'will_paginate', '~> 3.0.7'
 
+# Material design Sass
+gem 'materialize-sass'
+
 # Pagination styles
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 
