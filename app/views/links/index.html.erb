@@ -133,6 +133,11 @@
              <i class="material-icons">thumb_down</i>
            <% end %>
 
+           <% if link.user == current_user %>
+               <%= link_to 'edit', edit_link_path(link) %>
+               <%= link_to 'delete', link, method: :delete, data: { confirm: 'are you sure?' } %>
+           <% end %>
+
            <p id="post_link_side">
              <% if link.url.mb_chars.length < 22 %>
                <%= link_to link.url, link %>
