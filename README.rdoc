@@ -10,13 +10,12 @@ Also, feel free to make any design changes due to my somewhat 'primitive' UI I h
 design will be changed at a later stage in development).:+1:
 
 = Dependencies
-* Ruby v2.0.0p645
 * Rails v4.2.3
-* Devise v3.5.1
-* acts_as_votable v0.10.0
-* simple_form v3.1.0
-* MySQL - (and the MySQL2 gem)
-* Bootstrap Sass
+* Devise v3.5.1 - https://github.com/plataformatec/devise
+* activerecord-reputation-system - https://github.com/twitter/activerecord-reputation-system
+* simple_form v3.1.0 - https://github.com/plataformatec/simple_form
+* MySQL Database - (and the MySQL2 gem)
+* Materialize-sass - http://materializecss.com/
 * For the full list of dependencies/gems look in the <tt>Gemfile</tt>
 
 = Installing MySQL
