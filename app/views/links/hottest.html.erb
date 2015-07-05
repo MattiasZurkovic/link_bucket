@@ -1,38 +1,54 @@
 
 <div class="container">
 
-<div class="right_options">
+  <nav class="tabMenu rightBar">
 
-  <div id="search_container">
-    <p>search the link bucket</p><hr />
-      <div id="search_form">
-          <%= form_tag links_path, :method => 'get' do %>
-            <p>
-              <%= text_field_tag :search, params[:search], class: 'search_box', :placeholder => "what you looking for?" %>
-              <%= submit_tag "go!", :name => nil, class: 'search_button'%>
-            </p>
-          <% end %>
+    <div id="search_container">
+      <p>search the link bucket</p><hr />
+        <div id="search_form">
+            <%= form_tag links_path, :method => 'get' do %>
+              <p>
+                <%= text_field_tag :search, params[:search], class: 'search_box', :placeholder => "what you looking for?" %>
+                <%= submit_tag "go!", :name => nil, class: 'search_button'%>
+              </p>
+            <% end %>
+          </div>
         </div>
-      </div>
 
-      <div id="right_submit">
-          <!-- Checks to see if user is signed in, and when they click it will allow them to post -->
-          <% if user_signed_in? -%>
-            <%= link_to 'submit', new_link_path %>
-          <% else -%>
-            <!-- If someone is not logged in, and wants to post something, redirects the to login page -->
-            <%= link_to 'submit', '/users/sign_in' %>
-          <% end -%>
-      </div>
+        <div id="right_submit">
+            <% if user_signed_in? -%>
+              <%= link_to new_link_path do %>
+                <button>submit link</button>
+              <% end %>
+            <% else -%>
+              <%= link_to '/users/sign_in' do %>
+                <button>submit link</button>
+              <% end %>
+            <% end -%>
+        </div>
 
-      <div id="sort_by_main">
-        <p>sort by:</p>
-        <%= link_to 'popular', '/popular' %>
-        <%= link_to 'newest', '/new' %>
-        <%= link_to 'oldest', '/old' %>
-      </div>
+  		<div class="label">sort by:</div>
+  		<div id="sort_by_main">
 
-</div>
+          <%= link_to '/popular' do %>
+            <button>popularity</button>
+          <% end %>
+
+          <%= link_to '/new' do %>
+            <button>newest</button>
+          <% end %>
+
+          <%= link_to '/old' do %>
+            <button>oldest</button>
+          <% end %>
+  		</div>
+
+          <div class="label">more on us:</div>
+
+          <a class="btn btn-default width-100">what is the link bucket?</a>
+          <a class="btn btn-default width-100">our policy</a>
+
+  	</nav>
 
   <!-- Show search query to user (what they searched for...) -->
   <% @links.to_a %>
