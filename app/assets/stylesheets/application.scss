@@ -14,8 +14,8 @@
  *= require_self
  */
 
-//@import "bootstrap-sprockets";
-//@import "bootstrap";
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,900);
 
 @import "materialize/components/color";
@@ -85,11 +85,6 @@ a {
   color: #fff;
 }
 
-.post_row h3 {
-  padding-top: 5px;
-  width: 50%;
-}
-
 .pagination {
   width: 250px;
   margin: 0 auto;
@@ -102,13 +97,16 @@ a {
 
 #search_container {
   float: right;
-  width: 250px auto;
-  border: 1px solid #b0bec5;
+  width: 250px;
   border-radius: 4px;
   padding: 0.5em;
   text-align: center;
+  margin-top: 8px;
 }
 
+.card {
+  background-color: #eceff1;
+}
 
 .search_box {
   border: 1px solid #b0bec5;

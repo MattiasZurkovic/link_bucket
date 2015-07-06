@@ -11,6 +11,7 @@ class LinksController < ApplicationController
     if params[:search]
       @links = Link.where('title LIKE ?', "%#{params[:search]}%")
     end
+
   end
 
   def vote
