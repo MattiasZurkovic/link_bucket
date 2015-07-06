@@ -17,9 +17,24 @@
 
       <div id="right_submit">
           <% if user_signed_in? -%>
+
             <%= link_to new_link_path do %>
               <button class="waves-effect waves-light btn">submit link</button>
+              <!-- Modal Trigger -->
+              <a data-target="modal1" class="btn modal-trigger" href="#modal1">Modal</a>
+              <!-- Modal Structure -->
+              <div id="modal1" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                  <h4>Modal Header</h4>
+                  <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+                </div>
+              </div>
+
             <% end %>
+
           <% else -%>
             <%= link_to '/users/sign_in' do %>
               <button class="waves-effect waves-light btn">submit link</button>
@@ -52,58 +67,6 @@
 <% end %>
 
 <% @links.each do |link| %>
-<!--  <div class="post_row">
-
-
-
-    <div class="vote_actions">
-
-      <div id="upvote">
-        <%= link_to vote_link_path(link, type: "up"), method: "post"  do%>
-           <i class="material-icons">thumb_up</i>
-        <% end %>
-      </div>
-
-      <div class="show_score">
-         <%= link.reputation_for(:votes).to_i %>
-      </div>
-
-      <div id="downvote">
-        <%= link_to vote_link_path(link, type: "down"), method: "post" do%>
-          <i class="material-icons">thumb_down</i>
-        <% end %>
-      </div>
-
-    </div>
-
-    <h3>
-
-      <% if link.title.mb_chars.length < 37 %>
-        <%= link_to link.title, link %>
-      <% else %>
-        <%= link_to link.title.truncate(37), link %>
-      <% end %>
-
-      <div class="submitted">submitted <%= time_ago_in_words(link.created_at) %> ago by <%= link.user.name %>
-
-        <p id="post_link_side">
-          <% if link.url.mb_chars.length < 22 %>
-            (<%= link_to link.url, link %>)
-          <% else %>
-            (<%= link_to link.url.truncate(27), link %>)
-          <% end %>
-        </p>
-
-        <% if link.user == current_user %>
-            <%= link_to 'edit | ', edit_link_path(link) %>
-            <%= link_to 'delete', link, method: :delete, data: { confirm: 'are you sure?' } %>
-        <% end %>
-      </div>
-
-    </h3>
-
-  </div> -->
-
 
   <div class="post_row2">
 
@@ -160,3 +123,19 @@
     <%= will_paginate @links, renderer: BootstrapPagination::Rails, previous_label: "<", next_label: ">", inner_window: 1, outer_window: 0 %>
   <% end %>
 </div>
+
+<script>
+$(document).ready(function(){
+  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  $('.modal-trigger').leanModal();
+});
+
+$('.modal-trigger').leanModal({
+  dismissible: true, // Modal can be dismissed by clicking outside of the modal
+  opacity: .5, // Opacity of modal background
+  in_duration: 300, // Transition in duration
+  out_duration: 200, // Transition out duration
+  }
+);
+
+</script>
