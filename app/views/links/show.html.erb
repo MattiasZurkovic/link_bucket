@@ -6,13 +6,6 @@
   <%= link_to @link.url, @link.url %>
 </p> <hr />
 
-<h5 class="comments_title">
-  <%= @link.comments.count %> comments
-</h5>
-
-<div id="comments">
-  <%= render :partial => @link.comments %>
-</div>
 <%= simple_form_for [@link, Comment.new]  do |f| %>
   <div class="field">
     <%= f.text_area :body, class: "form-control" %>
@@ -20,4 +13,12 @@
   <br>
   <%= f.submit "add comment"%>
 <% end %>
+
+<h5 class="comments_title">
+  <%= @link.comments.count %> comments
+</h5>
+<div id="comments">
+  <%= render :partial => @link.comments %>
+</div>
+
 </div>
