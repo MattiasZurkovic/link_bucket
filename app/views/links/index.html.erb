@@ -78,7 +78,9 @@
            <%= link_to vote_link_path(link, type: "up"), method: "post"  do%>
               <i class="material-icons">thumb_up</i>
            <% end %>
+
            <a href="#"><%= link.reputation_for(:votes).to_i %></a>
+
            <%= link_to vote_link_path(link, type: "down"), method: "post" do%>
              <i class="material-icons">thumb_down</i>
            <% end %>
@@ -104,12 +106,14 @@
 
 
 <% end %>
+
 </div>
 
 <div class="pagination">
   <% if !params[:search] %>
     <%= will_paginate @links, renderer: BootstrapPagination::Rails, previous_label: "<", next_label: ">", inner_window: 1, outer_window: 0 %>
   <% end %>
+</div>
 
 <script>
 
