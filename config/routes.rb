@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   match '/new', :to => 'links#index', :via => :get
   match '/old', :to => 'links#oldest', :via => :get
   match '/popular', :to => 'links#hottest', :via => :get
-
+  match '/snake', :to => 'links#snake', :via => :get
 
   root to: 'links#index'
 

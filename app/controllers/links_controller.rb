@@ -109,6 +109,9 @@ class LinksController < ApplicationController
     redirect_to links_path
   end
 
+  def snake
+  end
+
   # Link orginization
 
   private
