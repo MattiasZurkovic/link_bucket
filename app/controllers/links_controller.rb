@@ -109,6 +109,7 @@ class LinksController < ApplicationController
     redirect_to links_path
   end
 
+  # Easter egg ToDo: implement it...
   def snake
   end
 
