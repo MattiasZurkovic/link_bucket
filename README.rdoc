@@ -47,3 +47,5 @@ I wanted to make this to get a good grasp of rails and web development. Hopefull
 will join me in updating and maintaining the site!
 
 Feel free to change what you like -- Have Fun and happy coding!
+
+:) - Will change the style
